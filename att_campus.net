@@ -1,0 +1,1650 @@
+**********************************************************************************
+***** Project-File for Network Prediction ****************************************
+**********************************************************************************
+
+
+**********************************************************************************
+****** DEFINITION OF COORDINATE SYSTEM *******************************************
+**********************************************************************************
+COORD_SYSTEM_ELLIPSOID 1 
+COORD_SYSTEM_DATUM 0
+COORD_SYSTEM_GEO_UTM "UTM"
+COORD_SYSTEM_UTM_ZONE 12
+COORD_SYSTEM_UTM_HEMISPHERE N
+**********************************************************************************
+****** OUTPUT OF NETWORK PLANNING  ***********************************************
+**********************************************************************************
+* Basic name of all propagation output file **************************************
+OUTPUT_PROPAGATION_FILES "cli_test"
+OUTPUT_PROPAGATION_MOBILE_STATION_FILES "MS Results"
+* Basic name of all Propagation projects *****************************************
+PROJECT_FILE "Y:\att_proj\att_campus\att_campus"
+* Separate propagation results in individual directories (for each TRX) **********
+SEPARATION_DIRECTORY y
+* Show results in a seperate window **********************************************
+SHOW_RESULTS_IN_SEPARATE_WINDOW n
+* Simulate each carrier individually *********************************************
+SIMULATE_EACH_CARRIER_INDIVIDUALLY n
+COMPUTATION_REQUIRED y
+COMPUTATION_REQUIRED_EMC y
+* Write results (power matrices) to ASCII file which can be read with MS EXCEL ***
+EXCEL_OUTPUT n
+* Write results of propagation modules to ASCII files ****************************
+ASCII_OUTPUT_PROP y
+
+**********************************************************************************
+* Simulation/Planning Area *******************************************************
+**********************************************************************************
+COORDINATES_MODE 1
+COORDINATES_TYPE 1
+SURFACE_PREDICTION_MODE y
+URBAN_INDOOR_CNP_PREDICTION_MODE n
+**********************************************************************************
+COORDINATES_AREA 427915.8900000000 4511455.8070000000 430394.5220000000 4514546.3190000001
+HEIGHT  1.50000 
+HEIGHT_MODE 0
+RESOLUTION 5.0000000000
+CNP_HEIGHT_MODE 0
+HEIGHT_CNP  1.500 
+RESOLUTION_CNP 1.0000
+
+TIME_VARIANT TIME_VARIANT_MODE 0
+TIME_VARIANT TIME_VARIANT_START 0.000000
+TIME_VARIANT TIME_VARIANT_STOP 0.000000
+TIME_VARIANT TIME_VARIANT_INTERVAL 1.000000
+**********************************************************************************
+* Properties of Antenna at Mobile Station (for prediction pints) *****************
+**********************************************************************************
+* Type of antenna (either OMNI or PATTERN) ***************************************
+MOBILE_ANTENNA_MODE OMNI
+
+**********************************************************************************
+* Output of Propagation Models ***************************************************
+**********************************************************************************
+* Signal Level (Power, Path Loss, Field Strength) ********************************
+POWER y
+POWER_RUN_MS y
+FIELDSTRENGTH y
+PATH_LOSS y
+OFFSET_LEVEL 0.000
+* Delay Spread *******************************************************************
+DELAY_TIME y
+DELAY_SPREAD n
+* Angular Spread (Mobile Station) ************************************************
+ANGULAR_SPREAD_MS n
+* Angular Spread (Base Station) **************************************************
+ANGULAR_SPREAD_BS n
+* Angular Means *****************************************************************
+ANGULAR_MEANS y
+* LOS / NLOS (Line of Sight and Non line of sight) *******************************
+LOS_STATUS y
+* Number of interactions *********************************************************
+NR_INTERACTIONS n
+* Channel Impulse Response, Transmission Matrix and Propagation Paths ************
+RAY_PATHS y
+CHANNEL_IMPULSE_RESPONSE y
+TRANSMISSION_MATRIX y
+PROPAGATION_PATHS y
+* Further Propagation Results ****************************************************
+HEIGHT_PROFILE n
+MORPHO_DATA n
+MS_CLUTTER_HEIGHT n
+
+**********************************************************************************
+****** SETTINGS FOR SIMULATION ***************************************************
+**********************************************************************************
+* Type of computation (0 = propagation predictions, 20 = network simulations ****
+COMPUTATION_MODE 2
+
+**********************************************************************************
+****** TRAFFIC BASED ON CLUTTER DATABASES  ***************************************
+**********************************************************************************
+* Name of clutter/morpho database used as basis for traffic definitions ***
+CLUTTER_DATABASE_TRAFFIC "UofU_Campus_UrbanDB.odb"
+CLUTTER_DATABASE_TRAFFIC_INDEX n
+CLUTTER_TABLE_TRAFFIC ""
+
+* Definition of transmission mode for cell assignment **************************
+TRANSMISSION_MODE_CA 0 SPREADING_FACTOR_DOWNLINK 256
+TRANSMISSION_MODE_CA 0 SNIR_DL 3.0000
+TRANSMISSION_MODE_CA 0 MIN_POWER_DL -150.0000
+TRANSMISSION_MODE_CA 0 BACKOFF_POWER_DL 0.000
+TRANSMISSION_MODE_CA 0 USE_MIN_POWER_DL N
+
+
+*******************************************************************************
+****** DEFINITION OF NEW SITE *************************************************
+*******************************************************************************
+
+***********************************************************************
+SITE 0 SITE_NAME "Site"
+SITE 0 SITE_LOCATION 0.0000000000 0.0000000000 0.0000000000
+SITE 0 MAX_USER 1000
+SITE 0 MAX_DATA_RATE 1000.000
+SITE 0 COUNTER_TRX 0
+***********************************************************************
+
+*******************************************************************************
+****** DEFINITION OF NEW TRX **************************************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 0 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 0 DISABLED n
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 0 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 0 POSITION 0.0000000000, 0.0000000000, 15.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 0 NAME "Antenna"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 0 SITE_NUMBER -1
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 0 TYPE ISO
+***** Transmitted power *******************************************************
+ANTENNA 0 POWER 10.00000
+***** Power unit **************************************************************
+ANTENNA 0 UNIT WATT
+***** Repeater mode ***********************************************************
+ANTENNA 0 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 0 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 0 APERTURE_AUTO 1
+ANTENNA 0 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 0 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 0 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 0 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 0 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 0 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 0 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 0 FREQUENCY 2000.00
+***** Polarization ************************************************************
+ANTENNA 0 POLARIZATION 0
+ANTENNA 0 POLARIZATION_ANGLE 0.000
+ANTENNA 0 POLARIZATION_XPD 10.000
+ANTENNA 0 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 0 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 0 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 0 NOISEFIGURE 5.00000
+ANTENNA 0 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 0 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 0 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 0 MAX_USER 1000
+ANTENNA 0 MAX_DATA_RATE 20000.00000
+ANTENNA 0 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 0 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 0 COMMON_CHANNEL_POWER 30.000
+ANTENNA 0 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 0 PREDICTION_AREA_INDIVIDUAL n
+
+ANTENNA 0 PREDICTION_AREA AREA_MODE 2
+ANTENNA 0 PREDICTION_AREA COORDINATES_AREA 427915.8900000000 4511455.8070000000 430394.5220000000 4514546.3190000001
+ANTENNA 0 PREDICTION_AREA RADIUS_AREA 200.0000000000
+
+
+*******************************************************************************
+****** DEFINITION OF DEFAULT TRX  *********************************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA -1 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA -1 DISABLED n
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA -1 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA -1 POSITION 0.0000000000, 0.0000000000, 2.5000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA -1 NAME "Antenna"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA -1 SITE_NUMBER -1
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA -1 TYPE ISO
+***** Transmitted power *******************************************************
+ANTENNA -1 POWER 10.00000
+***** Power unit **************************************************************
+ANTENNA -1 UNIT WATT
+***** Repeater mode ***********************************************************
+ANTENNA -1 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA -1 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA -1 APERTURE_AUTO 1
+ANTENNA -1 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA -1 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA -1 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA -1 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA -1 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA -1 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA -1 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA -1 FREQUENCY 2000.00
+***** Polarization ************************************************************
+ANTENNA -1 POLARIZATION 0
+ANTENNA -1 POLARIZATION_ANGLE 0.000
+ANTENNA -1 POLARIZATION_XPD 10.000
+ANTENNA -1 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA -1 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA -1 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA -1 NOISEFIGURE 5.00000
+ANTENNA -1 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA -1 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA -1 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA -1 MAX_USER 1000
+ANTENNA -1 MAX_DATA_RATE 20000.00000
+ANTENNA -1 TDD_RATIO_INDIVIDUAL 0
+ANTENNA -1 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA -1 COMMON_CHANNEL_POWER 30.000
+ANTENNA -1 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA -1 PREDICTION_AREA_INDIVIDUAL n
+
+ANTENNA -1 PREDICTION_AREA AREA_MODE 2
+ANTENNA -1 PREDICTION_AREA COORDINATES_AREA 427915.8900000000 4511455.8070000000 430394.5220000000 4514546.3190000001
+ANTENNA -1 PREDICTION_AREA RADIUS_AREA 200.0000000000
+
+
+*******************************************************************************
+****** DEFINITION OF SITES ****************************************************
+*******************************************************************************
+
+
+***********************************************************************
+SITE 1 SITE_NAME "6E0FA95"
+SITE 1 SITE_LOCATION 417101.1940626700 4484647.8305936297 42.0000000000
+SITE 1 MAX_USER 1000
+SITE 1 MAX_DATA_RATE 1000.000
+SITE 1 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 2 SITE_NAME "6E1BB95"
+SITE 2 SITE_LOCATION 428243.2600000000 4512586.9299999997 42.0000000000
+SITE 2 MAX_USER 1000
+SITE 2 MAX_DATA_RATE 1000.000
+SITE 2 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 3 SITE_NAME "6E1BB96"
+SITE 3 SITE_LOCATION 427277.8362632440 4506907.8367616301 42.0000000000
+SITE 3 MAX_USER 1000
+SITE 3 MAX_DATA_RATE 1000.000
+SITE 3 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 4 SITE_NAME "6E1D495"
+SITE 4 SITE_LOCATION 427364.4270752420 4513009.1465805899 42.0000000000
+SITE 4 MAX_USER 1000
+SITE 4 MAX_DATA_RATE 1000.000
+SITE 4 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 5 SITE_NAME "6E1D695"
+SITE 5 SITE_LOCATION 417428.5170336560 4511392.8873895798 42.0000000000
+SITE 5 MAX_USER 1000
+SITE 5 MAX_DATA_RATE 1000.000
+SITE 5 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 6 SITE_NAME "6E1F795"
+SITE 6 SITE_LOCATION 420632.4501760980 4505784.6033385498 42.0000000000
+SITE 6 MAX_USER 1000
+SITE 6 MAX_DATA_RATE 1000.000
+SITE 6 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 7 SITE_NAME "6E22695"
+SITE 7 SITE_LOCATION 431001.4572787400 4511045.9055467099 42.0000000000
+SITE 7 MAX_USER 1000
+SITE 7 MAX_DATA_RATE 1000.000
+SITE 7 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 8 SITE_NAME "6E22696"
+SITE 8 SITE_LOCATION 430192.0651164010 4509804.3334428901 42.0000000000
+SITE 8 MAX_USER 1000
+SITE 8 MAX_DATA_RATE 1000.000
+SITE 8 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 9 SITE_NAME "6E22697"
+SITE 9 SITE_LOCATION 426098.0007271490 4512760.7844535299 42.0000000000
+SITE 9 MAX_USER 1000
+SITE 9 MAX_DATA_RATE 1000.000
+SITE 9 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 10 SITE_NAME "6E2EE98"
+SITE 10 SITE_LOCATION 429517.5600000000 4512152.0499999998 42.0000000000
+SITE 10 MAX_USER 1000
+SITE 10 MAX_DATA_RATE 1000.000
+SITE 10 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 11 SITE_NAME "6E5B395"
+SITE 11 SITE_LOCATION 428389.3253726630 4498190.6517717298 42.0000000000
+SITE 11 MAX_USER 1000
+SITE 11 MAX_DATA_RATE 1000.000
+SITE 11 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 12 SITE_NAME "6E63E95"
+SITE 12 SITE_LOCATION 413944.6238672130 4499924.2935891999 42.0000000000
+SITE 12 MAX_USER 1000
+SITE 12 MAX_DATA_RATE 1000.000
+SITE 12 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 13 SITE_NAME "6E64295"
+SITE 13 SITE_LOCATION 424968.3613681950 4501439.2762205498 42.0000000000
+SITE 13 MAX_USER 1000
+SITE 13 MAX_DATA_RATE 1000.000
+SITE 13 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 14 SITE_NAME "6E65297"
+SITE 14 SITE_LOCATION 424539.6735948260 4499633.9398216195 42.0000000000
+SITE 14 MAX_USER 1000
+SITE 14 MAX_DATA_RATE 1000.000
+SITE 14 COUNTER_TRX 1
+***********************************************************************
+
+
+***********************************************************************
+SITE 15 SITE_NAME "6E65D95"
+SITE 15 SITE_LOCATION 420716.5514318010 4490881.7442668797 42.0000000000
+SITE 15 MAX_USER 1000
+SITE 15 MAX_DATA_RATE 1000.000
+SITE 15 COUNTER_TRX 1
+***********************************************************************
+
+*******************************************************************************
+****** DEFINITION OF TRANSMITTERS *********************************************
+*******************************************************************************
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   1 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 1 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 1 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 1 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 1 POSITION 417101.1940626700, 4484647.8305936297, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 1 NAME "6E0FA95"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 1 SITE_NUMBER 1
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 1 TYPE ISO
+***** Gain of Antenna *********************************************************
+ANTENNA 1 ANTENNA_GAIN 4.518
+***** Transmitted power *******************************************************
+ANTENNA 1 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 1 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 1 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 1 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 1 APERTURE_AUTO 1
+ANTENNA 1 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 1 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 1 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 1 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 1 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 1 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 1 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 1 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 1 POLARIZATION 0
+ANTENNA 1 POLARIZATION_ANGLE 0.000
+ANTENNA 1 POLARIZATION_XPD 10.000
+ANTENNA 1 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 1 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 1 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 1 NOISEFIGURE 5.00000
+ANTENNA 1 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 1 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 1 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 1 MAX_USER 1000
+ANTENNA 1 MAX_DATA_RATE 20000.00000
+ANTENNA 1 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 1 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 1 COMMON_CHANNEL_POWER 30.000
+ANTENNA 1 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 1 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   2 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 2 MODIFIED n y
+***** Antenna enabled *********************************************************
+ANTENNA 2 DISABLED n
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 2 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 2 POSITION 428243.2600000000, 4512586.9299999997, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 2 NAME "6E1BB95"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 2 SITE_NUMBER 2
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 2 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 2 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 2 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 2 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 2 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 2 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 2 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 2 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 2 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 2 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 2 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 2 APERTURE_AUTO 1
+ANTENNA 2 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 2 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 2 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 2 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 2 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 2 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 2 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 2 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 2 POLARIZATION 0
+ANTENNA 2 POLARIZATION_ANGLE 0.000
+ANTENNA 2 POLARIZATION_XPD 10.000
+ANTENNA 2 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 2 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 2 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 2 NOISEFIGURE 5.00000
+ANTENNA 2 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 2 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 2 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 2 MAX_USER 1000
+ANTENNA 2 MAX_DATA_RATE 20000.00000
+ANTENNA 2 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 2 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 2 COMMON_CHANNEL_POWER 30.000
+ANTENNA 2 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 2 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   3 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 3 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 3 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 3 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 3 POSITION 427277.8362632440, 4506907.8367616301, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 3 NAME "6E1BB96"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 3 SITE_NUMBER 3
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 3 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 3 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 3 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 3 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 3 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 3 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 3 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 3 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 3 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 3 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 3 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 3 APERTURE_AUTO 1
+ANTENNA 3 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 3 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 3 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 3 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 3 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 3 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 3 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 3 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 3 POLARIZATION 0
+ANTENNA 3 POLARIZATION_ANGLE 0.000
+ANTENNA 3 POLARIZATION_XPD 10.000
+ANTENNA 3 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 3 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 3 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 3 NOISEFIGURE 5.00000
+ANTENNA 3 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 3 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 3 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 3 MAX_USER 1000
+ANTENNA 3 MAX_DATA_RATE 20000.00000
+ANTENNA 3 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 3 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 3 COMMON_CHANNEL_POWER 30.000
+ANTENNA 3 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 3 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   4 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 4 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 4 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 4 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 4 POSITION 427364.4270752420, 4513009.1465805899, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 4 NAME "6E1D495"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 4 SITE_NUMBER 4
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 4 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 4 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 4 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 4 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 4 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 4 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 4 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 4 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 4 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 4 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 4 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 4 APERTURE_AUTO 1
+ANTENNA 4 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 4 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 4 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 4 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 4 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 4 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 4 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 4 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 4 POLARIZATION 0
+ANTENNA 4 POLARIZATION_ANGLE 0.000
+ANTENNA 4 POLARIZATION_XPD 10.000
+ANTENNA 4 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 4 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 4 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 4 NOISEFIGURE 5.00000
+ANTENNA 4 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 4 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 4 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 4 MAX_USER 1000
+ANTENNA 4 MAX_DATA_RATE 20000.00000
+ANTENNA 4 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 4 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 4 COMMON_CHANNEL_POWER 30.000
+ANTENNA 4 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 4 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   5 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 5 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 5 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 5 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 5 POSITION 417428.5170336560, 4511392.8873895798, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 5 NAME "6E1D695"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 5 SITE_NUMBER 5
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 5 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 5 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 5 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 5 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 5 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 5 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 5 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 5 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 5 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 5 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 5 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 5 APERTURE_AUTO 1
+ANTENNA 5 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 5 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 5 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 5 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 5 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 5 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 5 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 5 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 5 POLARIZATION 0
+ANTENNA 5 POLARIZATION_ANGLE 0.000
+ANTENNA 5 POLARIZATION_XPD 10.000
+ANTENNA 5 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 5 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 5 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 5 NOISEFIGURE 5.00000
+ANTENNA 5 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 5 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 5 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 5 MAX_USER 1000
+ANTENNA 5 MAX_DATA_RATE 20000.00000
+ANTENNA 5 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 5 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 5 COMMON_CHANNEL_POWER 30.000
+ANTENNA 5 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 5 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   6 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 6 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 6 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 6 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 6 POSITION 420632.4501760980, 4505784.6033385498, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 6 NAME "6E1F795"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 6 SITE_NUMBER 6
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 6 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 6 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 6 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 6 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 6 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 6 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 6 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 6 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 6 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 6 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 6 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 6 APERTURE_AUTO 1
+ANTENNA 6 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 6 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 6 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 6 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 6 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 6 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 6 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 6 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 6 POLARIZATION 0
+ANTENNA 6 POLARIZATION_ANGLE 0.000
+ANTENNA 6 POLARIZATION_XPD 10.000
+ANTENNA 6 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 6 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 6 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 6 NOISEFIGURE 5.00000
+ANTENNA 6 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 6 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 6 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 6 MAX_USER 1000
+ANTENNA 6 MAX_DATA_RATE 20000.00000
+ANTENNA 6 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 6 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 6 COMMON_CHANNEL_POWER 30.000
+ANTENNA 6 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 6 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   7 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 7 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 7 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 7 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 7 POSITION 431001.4572787400, 4511045.9055467099, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 7 NAME "6E22695"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 7 SITE_NUMBER 7
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 7 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 7 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 7 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 7 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 7 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 7 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 7 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 7 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 7 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 7 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 7 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 7 APERTURE_AUTO 1
+ANTENNA 7 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 7 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 7 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 7 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 7 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 7 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 7 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 7 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 7 POLARIZATION 0
+ANTENNA 7 POLARIZATION_ANGLE 0.000
+ANTENNA 7 POLARIZATION_XPD 10.000
+ANTENNA 7 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 7 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 7 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 7 NOISEFIGURE 5.00000
+ANTENNA 7 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 7 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 7 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 7 MAX_USER 1000
+ANTENNA 7 MAX_DATA_RATE 20000.00000
+ANTENNA 7 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 7 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 7 COMMON_CHANNEL_POWER 30.000
+ANTENNA 7 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 7 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   8 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 8 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 8 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 8 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 8 POSITION 430192.0651164010, 4509804.3334428901, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 8 NAME "6E22696"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 8 SITE_NUMBER 8
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 8 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 8 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 8 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 8 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 8 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 8 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 8 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 8 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 8 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 8 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 8 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 8 APERTURE_AUTO 1
+ANTENNA 8 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 8 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 8 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 8 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 8 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 8 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 8 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 8 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 8 POLARIZATION 0
+ANTENNA 8 POLARIZATION_ANGLE 0.000
+ANTENNA 8 POLARIZATION_XPD 10.000
+ANTENNA 8 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 8 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 8 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 8 NOISEFIGURE 5.00000
+ANTENNA 8 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 8 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 8 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 8 MAX_USER 1000
+ANTENNA 8 MAX_DATA_RATE 20000.00000
+ANTENNA 8 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 8 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 8 COMMON_CHANNEL_POWER 30.000
+ANTENNA 8 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 8 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No   9 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 9 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 9 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 9 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 9 POSITION 426098.0007271490, 4512760.7844535299, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 9 NAME "6E22697"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 9 SITE_NUMBER 9
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 9 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 9 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 9 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 9 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 9 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 9 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 9 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 9 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 9 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 9 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 9 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 9 APERTURE_AUTO 1
+ANTENNA 9 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 9 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 9 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 9 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 9 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 9 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 9 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 9 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 9 POLARIZATION 0
+ANTENNA 9 POLARIZATION_ANGLE 0.000
+ANTENNA 9 POLARIZATION_XPD 10.000
+ANTENNA 9 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 9 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 9 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 9 NOISEFIGURE 5.00000
+ANTENNA 9 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 9 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 9 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 9 MAX_USER 1000
+ANTENNA 9 MAX_DATA_RATE 20000.00000
+ANTENNA 9 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 9 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 9 COMMON_CHANNEL_POWER 30.000
+ANTENNA 9 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 9 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No  10 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 10 MODIFIED n y
+***** Antenna enabled *********************************************************
+ANTENNA 10 DISABLED n
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 10 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 10 POSITION 429517.5600000000, 4512152.0499999998, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 10 NAME "6E2EE98"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 10 SITE_NUMBER 10
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 10 TYPE ISO
+***** Gain of Antenna *********************************************************
+ANTENNA 10 ANTENNA_GAIN 4.518
+***** Transmitted power *******************************************************
+ANTENNA 10 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 10 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 10 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 10 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 10 APERTURE_AUTO 1
+ANTENNA 10 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 10 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 10 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 10 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 10 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 10 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 10 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 10 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 10 POLARIZATION 0
+ANTENNA 10 POLARIZATION_ANGLE 0.000
+ANTENNA 10 POLARIZATION_XPD 10.000
+ANTENNA 10 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 10 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 10 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 10 NOISEFIGURE 5.00000
+ANTENNA 10 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 10 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 10 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 10 MAX_USER 1000
+ANTENNA 10 MAX_DATA_RATE 20000.00000
+ANTENNA 10 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 10 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 10 COMMON_CHANNEL_POWER 30.000
+ANTENNA 10 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 10 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No  11 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 11 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 11 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 11 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 11 POSITION 428389.3253726630, 4498190.6517717298, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 11 NAME "6E5B395"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 11 SITE_NUMBER 11
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 11 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 11 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 11 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 11 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 11 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 11 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 11 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 11 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 11 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 11 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 11 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 11 APERTURE_AUTO 1
+ANTENNA 11 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 11 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 11 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 11 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 11 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 11 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 11 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 11 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 11 POLARIZATION 0
+ANTENNA 11 POLARIZATION_ANGLE 0.000
+ANTENNA 11 POLARIZATION_XPD 10.000
+ANTENNA 11 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 11 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 11 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 11 NOISEFIGURE 5.00000
+ANTENNA 11 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 11 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 11 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 11 MAX_USER 1000
+ANTENNA 11 MAX_DATA_RATE 20000.00000
+ANTENNA 11 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 11 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 11 COMMON_CHANNEL_POWER 30.000
+ANTENNA 11 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 11 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No  12 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 12 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 12 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 12 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 12 POSITION 413944.6238672130, 4499924.2935891999, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 12 NAME "6E63E95"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 12 SITE_NUMBER 12
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 12 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 12 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 12 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 12 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 12 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 12 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 12 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 12 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 12 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 12 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 12 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 12 APERTURE_AUTO 1
+ANTENNA 12 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 12 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 12 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 12 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 12 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 12 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 12 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 12 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 12 POLARIZATION 0
+ANTENNA 12 POLARIZATION_ANGLE 0.000
+ANTENNA 12 POLARIZATION_XPD 10.000
+ANTENNA 12 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 12 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 12 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 12 NOISEFIGURE 5.00000
+ANTENNA 12 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 12 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 12 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 12 MAX_USER 1000
+ANTENNA 12 MAX_DATA_RATE 20000.00000
+ANTENNA 12 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 12 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 12 COMMON_CHANNEL_POWER 30.000
+ANTENNA 12 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 12 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No  13 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 13 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 13 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 13 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 13 POSITION 424968.3613681950, 4501439.2762205498, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 13 NAME "6E64295"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 13 SITE_NUMBER 13
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 13 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 13 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 13 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 13 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 13 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 13 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 13 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 13 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 13 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 13 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 13 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 13 APERTURE_AUTO 1
+ANTENNA 13 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 13 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 13 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 13 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 13 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 13 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 13 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 13 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 13 POLARIZATION 0
+ANTENNA 13 POLARIZATION_ANGLE 0.000
+ANTENNA 13 POLARIZATION_XPD 10.000
+ANTENNA 13 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 13 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 13 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 13 NOISEFIGURE 5.00000
+ANTENNA 13 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 13 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 13 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 13 MAX_USER 1000
+ANTENNA 13 MAX_DATA_RATE 20000.00000
+ANTENNA 13 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 13 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 13 COMMON_CHANNEL_POWER 30.000
+ANTENNA 13 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 13 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No  14 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 14 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 14 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 14 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 14 POSITION 424539.6735948260, 4499633.9398216195, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 14 NAME "6E65297"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 14 SITE_NUMBER 14
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 14 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 14 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 14 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 14 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 14 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 14 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 14 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 14 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 14 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 14 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 14 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 14 APERTURE_AUTO 1
+ANTENNA 14 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 14 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 14 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 14 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 14 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 14 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 14 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 14 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 14 POLARIZATION 0
+ANTENNA 14 POLARIZATION_ANGLE 0.000
+ANTENNA 14 POLARIZATION_XPD 10.000
+ANTENNA 14 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 14 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 14 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 14 NOISEFIGURE 5.00000
+ANTENNA 14 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 14 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 14 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 14 MAX_USER 1000
+ANTENNA 14 MAX_DATA_RATE 20000.00000
+ANTENNA 14 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 14 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 14 COMMON_CHANNEL_POWER 30.000
+ANTENNA 14 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 14 PREDICTION_AREA_INDIVIDUAL n
+
+*******************************************************************************
+***** Basestation / Antenna / Cell    No  15 **********************************
+*******************************************************************************
+***** Antenna modified since last path loss computation ***********************
+ANTENNA 15 MODIFIED y y
+***** Antenna enabled *********************************************************
+ANTENNA 15 DISABLED y
+***** Type of antenna (single antenna, radiating cable, repeater, etc.) *******
+* Single Antenna = 0, Radiating Cable = 3, Repeater = 4,... 
+ANTENNA 15 ANTENNA_TYPE 0
+***** Coordinates of the antenna      [x,y,z] *********************************
+ANTENNA 15 POSITION 420716.5514318010, 4490881.7442668797, 42.0000000000 
+***** Name (ID) of the antenna / cell *****************************************
+ANTENNA 15 NAME "6E65D95"
+***** Number of Site to which antenna belongs (-1 if no site) *****************
+ANTENNA 15 SITE_NUMBER 15
+***** Antenna type (ISO, SECTOR) *********************************************
+ANTENNA 15 TYPE SECTOR
+***** Antenna pattern (Filename without extension) ****************************
+ANTENNA 15 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_SBandCombined_00DT_3600"
+ANTENNA 15 PATTERN_TYPE 4
+***** Gain of Antenna *********************************************************
+ANTENNA 15 ANTENNA_GAIN_VERTICAL 4.518
+***** Horizontal Orientation of the antenna [Degrees] *************************
+ANTENNA 15 HORIZONTAL 0.00 N
+***** Vertical Orientation of the antenna (Downtilt) [Degrees] ****************
+ANTENNA 15 VERTICAL 0.00
+***** Electrical Downtilt of the antenna [Degrees] ****************************
+ANTENNA 15 ELECTRICAL_DOWNTILT 0.00
+***** Transmitted power *******************************************************
+ANTENNA 15 POWER 36.00000
+***** Power unit **************************************************************
+ANTENNA 15 UNIT DBM
+***** Repeater mode ***********************************************************
+ANTENNA 15 REPEATER_MODE 0
+***** Transparent Repeater amplification gain *********************************
+ANTENNA 15 REPEATER_SIGNAL_AMPLIFICATION 20.00
+***** Antenna Aperture ********************************************************
+ANTENNA 15 APERTURE_AUTO 1
+ANTENNA 15 ANTENNA_APERTURE 360.000
+***** Individual threshold for received power related to cell selection *******
+ANTENNA 15 INDIVIDUAL_THRESHOLD_CELL_SELECT 0
+***** Threshold for received power related to cell selection ******************
+ANTENNA 15 THRESHOLD_CELL_SELECT -100.000
+***** Individual threshold for max. radius related to cell selection **********
+ANTENNA 15 INDIVIDUAL_MAX_RADIUS 0
+***** Threshold for max. radius related to cell selection *********************
+ANTENNA 15 APERTURE_MAX_RADIUS 1000.000
+***** Power as output power (0), EIRP (1), ERP (2) *************************
+ANTENNA 15 POWER_MODE 0
+***** Type of power amplifier (0 = Single Carrier, 1 = Multi Carrier) *********
+ANTENNA 15 POWER_AMPLIFIER 0
+***** Transmitted frequency [MHz] *********************************************
+ANTENNA 15 FREQUENCY 3600.00
+***** Polarization ************************************************************
+ANTENNA 15 POLARIZATION 0
+ANTENNA 15 POLARIZATION_ANGLE 0.000
+ANTENNA 15 POLARIZATION_XPD 10.000
+ANTENNA 15 OPTIMIZER_TRX_PARA_MODE 0
+ANTENNA 15 OPTIMIZER_TRX_PARA_ORIENTATION 0.0 0.0 0.0 0.0 0.0 0.0
+***** TRX Properties of Transmitter *******************************************
+ANTENNA 15 TRX_PROPERTIES_INDIVIDUAL n
+ANTENNA 15 NOISEFIGURE 5.00000
+ANTENNA 15 KEYWORD_DIVERSITY_GAIN 0.00000
+***** Properties of Feeding Cable *********************************************
+* Feeding cable mode 0 = manual definition, 1 = geometrically defined  ******
+ANTENNA 15 ANTENNA_CABLE_LOSS_MODE 0
+ANTENNA 15 ANTENNA_CABLE_LOSS 0.00000
+***** Properties for (dynamic) WCDMA system simulator *************************
+ANTENNA 15 MAX_USER 1000
+ANTENNA 15 MAX_DATA_RATE 20000.00000
+ANTENNA 15 TDD_RATIO_INDIVIDUAL 0
+ANTENNA 15 OFDM_GUARD_INTERVAL_INDIVIDUAL 0
+
+ANTENNA 15 COMMON_CHANNEL_POWER 30.000
+ANTENNA 15 TRX_SIGNAL_DELAY 0.00000
+***** Prediction area for this transmitter ************************************
+*** (Default or individual) ***************************************************
+ANTENNA 15 PREDICTION_AREA_INDIVIDUAL n
+
+
+*******************************************************************************
+
+****** Reference TRX (Antenna) for signal delays ******************************
+
+*******************************************************************************
+REFERENCE_TRX -100
+
+**********************************************************************************
+****** DEFINITION OF PROPAGATION ENVIRONMENT *************************************
+**********************************************************************************
+* Rural Prediction Model Used [y/n]                                              *
+SCENARIO_RURAL n
+* Urban Prediction Model Used [y/n]                                              *
+SCENARIO_URBAN y
+* Indoor Prediction Model Used [y/n]                                             *
+SCENARIO_INDOOR n
+* Only propagation analysis (y) or additionally network planning included (n)    *
+NETWORK_INCLUDED y
+
+**********************************************************************************
+****** POLARIMETRIC ANALYSIS *****************************************************
+**********************************************************************************
+* Full (limited selection of scenarios and propagation models) [y]
+* Standard (suitable for all scenarios and propagation models) [n]
+ANTENNA_ONLY_FULLPOLARIMETRIC n
+
+************************************************************************************
+****** PROPERTIES OF COMPONENT REPORTS *********************************************
+************************************************************************************
+COMPONENT_REPORT OUTPUT_CSV y
+COMPONENT_REPORT OUTPUT_PDF y
+COMPONENT_REPORT OUTPUT_TXT y
+COMPONENT_REPORT RESULT_TYPE 0
+
+
+************************************************************************************
+****** PROPERTIES OF TRAFFIC REPORTS ***********************************************
+************************************************************************************
+NETWORK_REPORT NETWORK_REPORT_EACH_ITERATION n
+NETWORK_REPORT NETWORK_REPORT_CLUTTER_INDIVIDUAL y
+NETWORK_REPORT NETWORK_REPORT_APPLICATION_INDIVIDUAL y
+NETWORK_REPORT NETWORK_REPORT_FUS_DURING_MONTE_CARLO n
+NETWORK_REPORT NETWORK_REPORT_FILE_FORMATR_CSV n
+**********************************************************************************
+****** DEFINITION OF PARAMETERS FOR AUTO-GENERATION OF NAMES IN GUI **************
+**********************************************************************************
+COUNTER_SITE 17
+COUNTER_TRX 17
+COUNTER_COMPONENT 1
+**********************************************************************************
+**********************************************************************************

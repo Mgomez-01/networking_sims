@@ -1,0 +1,10 @@
+Name,Height,Type,Longitude,Latitude,UTM_Zone,frequency,power,Azimuth,Downtilt,Number,AntennaPattern
+Wasatch-DD1,8.8,Dense,428843.450784411,4513686.42361219,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi
+Mario-DD1,8.8,Dense,429038.097710765,4513882.0548162,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi
+Moran-DD1,8.8,Dense,429217.565707746,4513550.39426956,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi
+GH-DD1,8.8,Dense,429437.333084651,4513282.96627579,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi
+EBC-DD1,11.3,Dense,429266.674053859,4513230.86233949,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi
+USTAR-DD1,8.8,Dense,429070.270566626,4513399.26649913,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi
+MEB-north,18,Roof,428616.805426848,4513435.80822099,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi
+MEB-south,18,Roof,428613.48550062,4513386.48514264,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi
+Browning,25,Roof,428452.406100336,4513157.33184335,12,3600,36,0,0,1,Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600.msi

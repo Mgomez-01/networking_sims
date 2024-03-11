@@ -1,0 +1,121 @@
+**********************************************************************************
+**********************************************************************************
+
+
+**********************************************************************************
+****** DESCRIPTION OF AIR INTERFACE ************************************************
+************************************************************************************
+* Compute propagation with omni antennas & apply antenna patterns in network planning
+APPLY_ANTENNA_PATTERN_IN_NETWORK_PLANNING n 
+* Type of Multiple Access ***********************************************************
+* (FDMA Broadcast = -1; FDMA Cellular = 2; TDMA = 0; OFDM = 3, CDMA = 5) **************
+MULTIPLE_ACCESS -1
+* Simplex or duplex mode (simplex = 0, half duplex = 1, duplex = 2) ****************
+DUPLEX_MODE 0
+* Type of Duplex Mode (FDD = 0, TDD = 1) *******************************************
+DUPLEX_SUB_MODE 0
+MIMO_MODE 0
+MIMO_STREAM_SEPARATION_VALUES 0 20.00
+MIMO_ANTENNA_GAINS 0.000 0.000
+MIMO_OVERHEAD_RATIO 4.820
+MIMO_STREAM_POLARIZATION 1
+MIMO_STREAM_ANGLE_DEPENDENCY 0
+MIMO_STREAM_SEPARATION_VALUES_SAME_POL 7.000 8.000 8.000 10.000
+MIMO_STREAM_SEPARATION_VALUES_DIFF_POL 100.000 13.000 13.000 10.000
+NUMBER_MULTIHOPS 0
+MIN_REPEATER_RX_POWER -150.0000
+POLARIZATION_INTERFERENCE 0
+POLARIZATION_INTERFERENCE_VALUES_SAME_POL 0.000 1.000 2.500 0.000
+POLARIZATION_INTERFERENCE_VALUES_DIFF_POL 6.000 3.000 1.500 3.000
+POLARIZATION_INTERFERENCE_VALUES_ORTHO_POL 100.000 13.000 10.000 10.000
+
+**********************************************************************************
+****** CARRIERS OF WIRELESS NETWORK **********************************************
+**********************************************************************************
+* Bandwidth of channel (in Hz) ***************************************************
+BANDWIDTH 5000000.00000
+* Separation of carriers (in Hz) *************************************************
+CARRIER_SEPARATION 5000000.00000
+* Separation between Downlink and Uplink (in MHz) ********************************
+DL_UL_SEPARATION 100.00000
+* Adjacent Channel Power Ratio [dB] **********************************************
+ADJCPR 100.00000
+* Alternate Channel Power Ratio [dB] *********************************************
+ALTCPR 100.00000
+* All Channel Power Ratio [dB] ***************************************************
+ALLCPR 100.00000
+**********************************************************************************
+
+
+
+* Cell Assignment ****************************************************************
+* Power Backoffs for Cell Assignment ***************************************
+POWER_BACKOFF_CELL_ASSIGN 10.00 0.00 10.00 0.00
+* Assignment of cells in cellular networks ***************************************
+CELL_SELECTION_MODE 0
+CELL_SELECTION_SIGNALS 0
+
+**********************************************************************************
+* Selection of mobile stations for cells (traffic simulations only) **************
+CELL_SELECTION_ALGORITHM -1
+CELL_SELECTION_UPDATE_LIST 1
+CELL_SELECTION_CONSIDER_APPLICATION 1
+CELL_SELECTION_USER_ALGORITHM 0 2 2 0 1 0.0000 1.0000
+
+**********************************************************************************
+****** DEFINITION OF OFDM PARAMETERS *********************************************
+**********************************************************************************
+OFDM ORDER_FFT 256
+OFDM SUB_CARRIER_GUARD 55
+OFDM SUB_CARRIER_CONTROL 0
+OFDM SUB_CARRIER_REFERENCE 8
+OFDM SUB_CARRIER_DC y
+OFDM SUB_CARRIER_RESOURCE_BLOCK 12
+OFDM SYMBOLS_IDENTICAL y
+OFDM SYMBOLS_DATA 1
+OFDM SYMBOLS_CONTROL 1
+OFDM SYMBOLS_REFERENCE 1
+OFDM SAMPLING_RATE -1
+OFDM EXTENDED_CYCLIC_PREFIX n
+OFDM GUARD_PERIOD 16
+OFDM POWER_BACKOFF_REFERENCE 0.0000
+OFDM POWER_BACKOFF_CONTROL 0.0000
+OFDM ISI_MODE 0
+OFDM SFN_MFN_MODE 1
+OFDM SYNCHRONIZATION 0
+OFDM FREQUENCY_REUSE 1 n
+OFDM REUSE_COMMON_BANDWIDTH_RATIO 50.000
+OFDM SOFT_FREQUENCY_REUSE_POWER_REDUCTION 3.000
+OFDM FRACTIONAL_REUSE_NO_INTERFERENCE y
+OFDM CELL_LOAD_MODE 0
+OFDM CONTRROL_CHANNEL_CELL_LOAD y
+OFDM SAME_PILOT_SUBCARRIERS y
+OFDM OFDM_INTERFERENCE_OVERLAP_RATIO 0.500
+OFDM OFDM_SUBCARRIER_POWER_MODE_UL 0
+OFDM BANDWIDTH_MODE_5G 1
+
+**********************************************************************************
+
+* Definition of Common Channels **************************************************
+COMMON_CHANNEL_POWER 30.000
+
+* Definition of transmission mode for cell assignment **************************
+TRANSMISSION_MODE_CA 0 SPREADING_FACTOR_DOWNLINK 256
+TRANSMISSION_MODE_CA 0 SNIR_DL 3.0000
+TRANSMISSION_MODE_CA 0 MIN_POWER_DL -150.0000
+TRANSMISSION_MODE_CA 0 BACKOFF_POWER_DL 0.000
+TRANSMISSION_MODE_CA 0 USE_MIN_POWER_DL N
+
+
+**********************************************************************************
+****** PROPERTIES OF MOBILE STATIONS *********************************************
+**********************************************************************************
+DEFAULT_MS NOISEFIGURE 6.0000
+DEFAULT_MS MIN_REC_LEVEL -90.0000
+DEFAULT_MS MIN_SNIR 0.0000
+DEFAULT_MS SENSITIVITY_LEVEL -120.0000
+DEFAULT_MS FAST_FADING_MARGIN 0.0000
+DEFAULT_MS MAX_TX_POWER 30.0000
+DEFAULT_MS POWER_CONTROL_RANGE 45.0000
+DEFAULT_MS LOSSES 1.0000
+DEFAULT_MS ANTENNA_GAIN 1.0000
