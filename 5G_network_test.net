@@ -20,14 +20,14 @@ OUTPUT_NETWORK_FILES "NetName"
 OUTPUT_PROPAGATION_FILES "PropName"
 OUTPUT_PROPAGATION_MOBILE_STATION_FILES "MS Results"
 * Basic name of all Propagation projects *****************************************
-PROJECT_FILE "Y:\network_sims\5G_network_test"
+PROJECT_FILE "Y:\work\networking_sims\5G_network_test"
 * Separate propagation results in individual directories (for each TRX) **********
 SEPARATION_DIRECTORY y
 * Show results in a seperate window **********************************************
 SHOW_RESULTS_IN_SEPARATE_WINDOW n
 * Simulate each carrier individually *********************************************
 SIMULATE_EACH_CARRIER_INDIVIDUALLY n
-COMPUTATION_REQUIRED y
+COMPUTATION_REQUIRED n
 COMPUTATION_REQUIRED_EMC y
 * Write results (power matrices) to ASCII file which can be read with MS EXCEL ***
 EXCEL_OUTPUT n
@@ -99,7 +99,7 @@ MS_CLUTTER_HEIGHT n
 **********************************************************************************
 * General output options *********************************************************
 COVERAGE_MAP n
-BEST_SERVER y
+BEST_SERVER n
 * Mode of additonal ASCII output: 0=no output, 1=only received cells, 2=all cells*
 ASCII_BEST_SERVER_MODE 0
 POWER_MOBILE_STATION y
@@ -114,30 +114,30 @@ SUPERPOSITION n
 MAXIMUM_VALUE y
 COCHANNEL_INTERFERENCE y
 RECEIVED_SIGNAL_INTER_NOISE y
-RECEIVED_INTER_NOISE n
+RECEIVED_INTER_NOISE y
 NEIGHBOR_LIST n
 NEIGHBOR_LIST_ORDER 1
 * Static Output Options **********************************************************
 SIGNAL_NOISE_MARGIN y
 EC_NT_MARGIN n
 EC n
-NR_USERS_SERVED y
-MAX_DATA_RATE y
-THROUGHPUT y
-TRANS_MODES_DATA_RATES y
+NR_USERS_SERVED n
+MAX_DATA_RATE n
+THROUGHPUT n
+TRANS_MODES_DATA_RATES n
 RSSI y
 RSRP y
 RSRQ y
 REFERENCE_SIGNALS_ASCII n
 STREAMS_MIMO n
-SERVED_TRAFFIC y
-OFFERED_TRAFFIC y
-BLOCKED_TRAFFIC y
-STATE_TRAFFIC y
-NUMBER_USERS_GENERATED y
+SERVED_TRAFFIC n
+OFFERED_TRAFFIC n
+BLOCKED_TRAFFIC n
+STATE_TRAFFIC n
+NUMBER_USERS_GENERATED n
 ASCII_MAX_DATA_RATE n
 HANDOVER_TYPE n
-RECEPTION_PROBABILITY y
+RECEPTION_PROBABILITY n
 NETWORK_OUTPUT_CIR_ASCII n
 
 **********************************************************************************
@@ -206,10 +206,10 @@ CELL_SELECTION_USER_ALGORITHM 0 2 2 0 1 0.0000 1.0000
 **********************************************************************************
 ****** DEFINITION OF OFDM PARAMETERS *********************************************
 **********************************************************************************
-OFDM ORDER_FFT 512
+OFDM ORDER_FFT 1024
 OFDM SUB_CARRIER_GUARD 211
-OFDM SUB_CARRIER_CONTROL 150
-OFDM SUB_CARRIER_REFERENCE 50
+OFDM SUB_CARRIER_CONTROL 500
+OFDM SUB_CARRIER_REFERENCE 100
 OFDM SUB_CARRIER_DC y
 OFDM SUB_CARRIER_RESOURCE_BLOCK 12
 OFDM SYMBOLS_IDENTICAL n
@@ -234,7 +234,7 @@ OFDM CONTRROL_CHANNEL_CELL_LOAD y
 OFDM SAME_PILOT_SUBCARRIERS n
 OFDM OFDM_INTERFERENCE_OVERLAP_RATIO 1.000
 OFDM OFDM_SUBCARRIER_POWER_MODE_UL 0
-OFDM BANDWIDTH_MODE_5G 1
+OFDM BANDWIDTH_MODE_5G 2
 
 **********************************************************************************
 
@@ -245,7 +245,7 @@ COMMON_CHANNEL_POWER 30.000
 ****** SETTINGS FOR SIMULATION ***************************************************
 **********************************************************************************
 * Type of computation (0 = propagation predictions, 20 = network simulations ****
-COMPUTATION_MODE 10
+COMPUTATION_MODE 22
 * Type of simulation: 0 = static simulator without traffic  ******************
 *                     4 = static simulator with traffic     ******************
 *                     5 = static simulator with Monte-Carlo simulation *******
@@ -276,7 +276,7 @@ REPRO_INIT_VALUE 0
 ****** TRAFFIC BASED ON CLUTTER DATABASES  ***************************************
 **********************************************************************************
 * Name of clutter/morpho database used as basis for traffic definitions ***
-CLUTTER_DATABASE_TRAFFIC "Y:\network_sims\UofU_Campus_UrbanDB.odb"
+CLUTTER_DATABASE_TRAFFIC "UofU_Campus_UrbanDB.odb"
 CLUTTER_DATABASE_TRAFFIC_INDEX n
 CLUTTER_TABLE_TRAFFIC ""
 
@@ -951,7 +951,7 @@ ANTENNA 1 SITE_NUMBER 1
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 1 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 1 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_VBandCombined_07DT_2110"
+ANTENNA 1 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_VBandCombined_07DT_2110"
 ANTENNA 1 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 1 ANTENNA_GAIN_VERTICAL 7.118
@@ -1053,7 +1053,7 @@ ANTENNA 2 SITE_NUMBER 2
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 2 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 2 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_VBandCombined_07DT_2110"
+ANTENNA 2 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_VBandCombined_07DT_2110"
 ANTENNA 2 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 2 ANTENNA_GAIN_VERTICAL 7.118
@@ -1155,7 +1155,7 @@ ANTENNA 3 SITE_NUMBER 3
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 3 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 3 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_VBandCombined_07DT_2110"
+ANTENNA 3 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_VBandCombined_07DT_2110"
 ANTENNA 3 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 3 ANTENNA_GAIN_VERTICAL 7.118
@@ -1257,7 +1257,7 @@ ANTENNA 4 SITE_NUMBER 4
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 4 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 4 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_VBandCombined_07DT_2110"
+ANTENNA 4 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_VBandCombined_07DT_2110"
 ANTENNA 4 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 4 ANTENNA_GAIN_VERTICAL 7.118
@@ -1359,7 +1359,7 @@ ANTENNA 5 SITE_NUMBER 5
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 5 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 5 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_VBandCombined_07DT_2110"
+ANTENNA 5 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_VBandCombined_07DT_2110"
 ANTENNA 5 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 5 ANTENNA_GAIN_VERTICAL 7.118
@@ -1461,7 +1461,7 @@ ANTENNA 6 SITE_NUMBER 6
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 6 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 6 PATTERN_VERTICAL "Y:\RA_Stuff\projects\kobus_req_benetel_ran650\antennas\VVSSP-360S-F\VVSSP-360S-F_SbandCombined_00DT_3600"
+ANTENNA 6 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_SBandCombined_00DT_3600"
 ANTENNA 6 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 6 ANTENNA_GAIN_VERTICAL 4.518
@@ -1541,7 +1541,7 @@ ANTENNA 7 SITE_NUMBER 7
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 7 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 7 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_VBandCombined_07DT_2110"
+ANTENNA 7 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_VBandCombined_07DT_2110"
 ANTENNA 7 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 7 ANTENNA_GAIN_VERTICAL 7.118
@@ -1643,7 +1643,7 @@ ANTENNA 8 SITE_NUMBER 8
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 8 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 8 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_VBandCombined_07DT_2110"
+ANTENNA 8 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_VBandCombined_07DT_2110"
 ANTENNA 8 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 8 ANTENNA_GAIN_VERTICAL 7.118
@@ -1745,7 +1745,7 @@ ANTENNA 9 SITE_NUMBER 9
 ***** Antenna type (ISO, SECTOR) *********************************************
 ANTENNA 9 TYPE SECTOR
 ***** Antenna pattern (Filename without extension) ****************************
-ANTENNA 9 PATTERN_VERTICAL "Y:\att_proj\att_campus\antennas\VVSSP-360S-F\VVSSP-360S-F_VBandCombined_07DT_2110"
+ANTENNA 9 PATTERN_VERTICAL "Y:\work\feko_files\antennas\VVSSP\msi\VVSSP-360S-F_VBandCombined_07DT_2110"
 ANTENNA 9 PATTERN_TYPE 4
 ***** Gain of Antenna *********************************************************
 ANTENNA 9 ANTENNA_GAIN_VERTICAL 7.118
@@ -1878,8 +1878,8 @@ NETWORK_REPORT NETWORK_REPORT_FILE_FORMATR_CSV n
 **********************************************************************************
 ****** DEFINITION OF PARAMETERS FOR AUTO-GENERATION OF NAMES IN GUI **************
 **********************************************************************************
-COUNTER_SITE 11
-COUNTER_TRX 11
+COUNTER_SITE 10
+COUNTER_TRX 10
 COUNTER_COMPONENT 1
 **********************************************************************************
 **********************************************************************************

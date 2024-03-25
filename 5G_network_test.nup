@@ -6,7 +6,7 @@
 ***** Database ****************************************************************
 *******************************************************************************
 ***** Vector Building Database (without extension) ****************************
-DATABASE_FILE "Y:\network_sims\UofU_Campus_UrbanDB"
+DATABASE_FILE "UofU_Campus_UrbanDB"
 ***** Mode of database (Standard = 6, IRT = 3, UDP = 7, COST = 4) *************
 DATABASE_MODE 6
 ***** Different materials considered [y/n] ************************************
@@ -18,7 +18,7 @@ VEGETATION_PROPERTIES y
 TOPO_MODE 1
 BUILDING_HEIGHTS_RELATIVE y
 ***** Topography Pixel Database (without extension) ***************************
-DATABASE_TOPO "Y:\network_sims\output_USGS1m.tdb"
+DATABASE_TOPO "Y:\work\feko_files\projects\kobus_req_benetel_ran650\output_USGS1m.tdb"
 ***** Clutter Pixel Database (without extension) ******************************
 DATABASE_CLUTTER "Default"
 ***** Clutter Table (without extension) ***************************************
@@ -207,7 +207,7 @@ DOMINANT_PATH_MODEL DPM_PATH_SET_EXP_DIFFR n
 DOMINANT_PATH_MODEL DPM_PATH_FREQUENCY 3500.0
 DOMINANT_PATH_MODEL FLOOR_HANDLING_GENERAL 1
 DOMINANT_PATH_MODEL FLOOR_HANDLING_TRX 1
-DOMINANT_PATH_MODEL INTERACTION_LOSS_WEIGHT 1 10.00 11.00
+DOMINANT_PATH_MODEL INTERACTION_LOSS_WEIGHT 0 1.00 10.00
 
 *******************************************************************************
 **************** PARAMETERS OF RECOMMENDATION ITU-R P.1411  *******************
